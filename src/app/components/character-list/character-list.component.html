@@ -1,15 +1,40 @@
 <div class="header-container">
   <div class="header-container__navbar">
-    <div class="header-container__navbar__nav-items">
-      <h1>Rick and morty</h1>
+    <div class="header-container__navbar__nav-item">
+      <img src="../assets/img/logo.png" />
     </div>
-    <div class="header-container__navbar__nav-items">
-      <input type="text" [(ngModel)]="inputSearchValue">
-      <button type="button" (click)="loadCharacters()">btn</button>
+    <div class="header-container__navbar__nav-item">
+      <h1>Rick e Morty</h1>
     </div>
   </div>
 </div>
 
+<div class="introduction-container" id="introduction">
+  <div class="introduction-container__item">
+    <h1>Sobre a API</h1>
+    <p>Pesquise um personagem de Rick e Morty para obter suas informações</p>
+    <a href="#introduction"><button type="button">Pesquisar</button></a>
+  </div>
+  <div class="introduction-container__item">
+    <img src="../assets/img/rickmorty.png" />
+  </div>
+</div>
+
+<div class="search-container">
+  <h1>Pesquisar personagem</h1>
+  <input type="text" [(ngModel)]="inputSearchValue" />
+  <button type="button" (click)="loadCharacters()">btn</button>
+</div>
+
 <div *ngFor="let character of characters">
- <p>{{character.name}}</p>
+  <div class="characters-list-container">
+    <div class="characters-list-container__items">
+      <img src="{{ character.image }}" />
+      <p>{{ character.name }}</p>
+      <p>{{ character.status }}</p>
+      <p>{{ character.species }}</p>
+      <p>{{ character.gender }}</p>
+      <p>{{ character.location.name }}</p>
+    </div>
+  </div>
 </div>
