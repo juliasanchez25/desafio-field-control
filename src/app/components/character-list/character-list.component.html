@@ -1,0 +1,15 @@
+<div class="header-container">
+  <div class="header-container__navbar">
+    <div class="header-container__navbar__nav-items">
+      <h1>Rick and morty</h1>
+    </div>
+    <div class="header-container__navbar__nav-items">
+      <input type="text" [(ngModel)]="inputSearchValue">
+      <button type="button" (click)="loadCharacters()">btn</button>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let character of characters">
+ <p>{{character.name}}</p>
+</div>
