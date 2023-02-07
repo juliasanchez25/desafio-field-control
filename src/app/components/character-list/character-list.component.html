@@ -12,7 +12,7 @@
 <div class="introduction-container" id="introduction">
   <div class="introduction-container__item">
     <h1>Sobre a API</h1>
-    <p>Pesquise um personagem de Rick e Morty para obter suas informações</p>
+    <p>A API contém informações sobre todos os personagens de Rick e Morty</p>
     <a href="#introduction"><button type="button">Pesquisar</button></a>
   </div>
   <div class="introduction-container__item">
@@ -21,20 +21,22 @@
 </div>
 
 <div class="search-container">
-  <h1>Pesquisar personagem</h1>
-  <input type="text" [(ngModel)]="inputSearchValue" />
-  <button type="button" (click)="loadCharacters()">btn</button>
+  <div class="search-container__items">
+    <h1>Pesquisar personagem...</h1>
+    <input type="text" [(ngModel)]="inputSearchValue" />
+    <button type="button" (click)="loadCharacters()">Procurar</button>
+  </div>
 </div>
 
 <div *ngFor="let character of characters">
   <div class="characters-list-container">
     <div class="characters-list-container__items">
       <img src="{{ character.image }}" />
-      <p>{{ character.name }}</p>
-      <p>{{ character.status }}</p>
-      <p>{{ character.species }}</p>
-      <p>{{ character.gender }}</p>
-      <p>{{ character.location.name }}</p>
+      <h1>{{ character.name }}</h1>
+      <p>Status: {{ character.status }}</p>
+      <p>Espécie: {{ character.species }}</p>
+      <p>Gênero: {{ character.gender }}</p>
+      <p>Localização: {{ character.location.name }}</p>
     </div>
   </div>
 </div>
