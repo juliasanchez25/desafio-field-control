@@ -28,8 +28,8 @@
   </div>
 </div>
 
-<div *ngFor="let character of characters">
-  <div class="characters-list-container">
+<div class="characters-list-container">
+  <div *ngFor="let character of characters">
     <div class="characters-list-container__items">
       <img src="{{ character.image }}" />
       <h1>{{ character.name }}</h1>
@@ -40,3 +40,5 @@
     </div>
   </div>
 </div>
+
+

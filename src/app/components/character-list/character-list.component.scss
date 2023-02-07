@@ -10,7 +10,9 @@
       padding: 0 20px;
 
       img {
+        display: block;
         width: 30%;
+        max-width: 100%;
       }
 
       h1 {
@@ -29,6 +31,11 @@
   &__item {
     display: inline-block;
     padding: 20px 40px;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
     h1, p, a, button {
       padding: 15px;
@@ -104,22 +111,23 @@
       }
     }
   }
-
 }
 
 .characters-list-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 70%;
+  margin: 0 auto;
+
   &__items {
-    padding: 15px;
+    margin: 10px;
 
     h1 {
       font-size: 1.5em;
-      text-align: center;
     }
 
     img {
-      margin-bottom: 2vh;
       opacity: .9;
       transition: 0.3s all ease;
 
