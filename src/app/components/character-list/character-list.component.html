@@ -1,30 +1,33 @@
 <div class="header-container">
+  <h1 class="header-container__logo">Rick & Morty</h1>
   <div class="header-container__navbar">
     <div class="header-container__navbar__nav-item">
-      <img src="../assets/img/logo.png" />
+      <a href="/">Home</a>
     </div>
     <div class="header-container__navbar__nav-item">
-      <h1>Rick e Morty</h1>
+      <a href="#introduction">Sobre</a>
+    </div>
+    <div class="header-container__navbar__nav-item">
+      <a href="#search">Pesquisar</a>
     </div>
   </div>
 </div>
 
 <div class="introduction-container" id="introduction">
   <div class="introduction-container__item">
-    <h1>Sobre a API</h1>
-    <p>A API contém informações sobre todos os personagens de Rick e Morty</p>
-    <a href="#introduction"><button type="button">Pesquisar</button></a>
+    <h1 class="animated-text">Saiba mais sobre os <span>personagens</span> de Rick & Morty</h1>
+    <p class="animated-text">A API utilizada contém informações sobre todos os personagens de Rick e Morty</p>
+    <a href="#search"><button type="button" class="animated-text">Iniciar</button></a>
   </div>
   <div class="introduction-container__item">
-    <img src="../assets/img/rickmorty.png" />
+    <img src="../assets/img/rickmorty.png" class="animated-image"/>
   </div>
 </div>
 
 <div class="search-container">
-  <div class="search-container__items">
-    <h1>Pesquisar personagem...</h1>
-    <input type="text" [(ngModel)]="inputSearchValue" />
-    <button type="button" (click)="loadCharacters()">Procurar</button>
+  <div class="search-container__items" id="search">
+    <input type="text" [(ngModel)]="inputSearchValue" placeholder="Pesquisar..."/>
+    <button type="button" (click)="loadCharacters()">btn</button>
   </div>
 </div>
 
@@ -40,5 +43,3 @@
     </div>
   </div>
 </div>
-
-

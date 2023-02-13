@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CharacterService {
-
   constructor(private httpClient: HttpClient) {}
 
   async loadCharacters(inputSearchValue: string) {
@@ -17,7 +16,7 @@ export class CharacterService {
         `https://rickandmortyapi.com/api/character/?name=${inputSearchValue}`
       )
       .toPromise();
-    console.log(request)
+    console.log(request);
     return request.results;
   }
 }

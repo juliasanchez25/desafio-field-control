@@ -4,7 +4,7 @@ import { CharacterService } from 'src/app/services/character.service';
 @Component({
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
-  styleUrls: ['./character-list.component.scss']
+  styleUrls: ['./character-list.component.scss'],
 })
 export class CharacterListComponent {
   public inputSearchValue: string = '';
