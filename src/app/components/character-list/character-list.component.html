@@ -2,30 +2,27 @@
   <h1 class="header-container__logo">Rick & Morty</h1>
   <div class="header-container__navbar">
     <div class="header-container__navbar__nav-item">
-      <a href="/">Home</a>
+      <a href="/"><div>Home</div></a>
     </div>
     <div class="header-container__navbar__nav-item">
-      <a href="#introduction">Sobre</a>
-    </div>
-    <div class="header-container__navbar__nav-item">
-      <a href="#search">Pesquisar</a>
+      <div (click)="moveToSearch()">Pesquisar</div>
     </div>
   </div>
 </div>
 
-<div class="introduction-container" id="introduction">
+<div class="introduction-container">
   <div class="introduction-container__item">
-    <h1 class="animated-text">Saiba mais sobre os <span>personagens</span> de Rick & Morty</h1>
-    <p class="animated-text">A API utilizada contém informações sobre todos os personagens de Rick e Morty</p>
-    <a href="#search"><button type="button" class="animated-text">Iniciar</button></a>
+    <h1 class="introduction-container__item__animated-text-1">Saiba mais sobre os <span>personagens</span> de Rick & Morty</h1>
+    <p class="introduction-container__item__animated-text-2">A API utilizada contém informações sobre todos os personagens de Rick e Morty</p>
+    <button type="button" class="introduction-container__item__animated-button" (click)="moveToSearch()">Iniciar</button>  
   </div>
   <div class="introduction-container__item">
-    <img src="../assets/img/rickmorty.png" class="animated-image"/>
+    <img src="../assets/img/rickmorty.png" class="introduction-container__item__animated-image"/>
   </div>
 </div>
 
-<div class="search-container">
-  <div class="search-container__items" id="search">
+<div #search id="search" class="search-container" *ngIf="showSearchContainer">
+  <div class="search-container__items">
     <input type="text" [(ngModel)]="inputSearchValue" placeholder="Pesquisar..."/>
     <button type="button" (click)="loadCharacters()">btn</button>
   </div>

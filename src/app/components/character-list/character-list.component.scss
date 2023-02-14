@@ -20,14 +20,19 @@
       padding: 0 40px;
 
       a {
+        text-decoration: none;
+      }
+
+      div {
         font-size: 1.2em;
         font-weight: 700;
-        text-decoration: none;
         color: #fff;
+        border-bottom: 3px solid transparent;
         transition: all 0.3s ease 0s;
+        cursor: pointer;
 
         &:hover {
-          color: #24b139;
+          border-bottom: 3px solid #24b139;
         }
       }
     }
@@ -44,29 +49,68 @@
     display: inline-block;
     padding: 20px 40px;
 
-    .animated-text {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-in-out;
+    &__animated-text-1 {
+      animation-name: slideInLeft;
+      animation-duration: 2s;
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-300px);
+        }
+
+        to {
+          transform: translateX(0);
+        }
+      }
     }
 
-    .animated-image {
+    &__animated-text-2 {
+      animation-name: slideInLeft;
+      animation-duration: 2.5s;
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-300px);
+        }
+
+        to {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &__animated-button {
+      animation-name: slideInLeft;
+      animation-duration: 3s;
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-300px);
+        }
+
+        to {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &__animated-image {
       display: block;
       width: 800px;
       max-width: 100%;
       margin-top: 5vh;
       animation: moveUpAndDown 3s ease-in-out infinite;
-    }
 
-    @keyframes moveUpAndDown {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-40px);
-      }
-      100% {
-        transform: translateY(0);
+      @keyframes moveUpAndDown {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-40px);
+        }
+        100% {
+          transform: translateY(0);
+        }
       }
     }
 
@@ -120,8 +164,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  margin-top: 20vh;
+  padding: 50px;
+  margin-top: 5vh;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
   background-color: #181818;
@@ -142,7 +186,6 @@
       padding: 25px;
       font-size: 1.1em;
       font-weight: 600;
-      flex: 1;
       border-radius: 50px;
       outline: none;
       border: none;

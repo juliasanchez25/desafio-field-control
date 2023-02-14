@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { CharacterService } from 'src/app/services/character.service';
 export class CharacterListComponent {
   public inputSearchValue: string = '';
   public characters: any = [];
+  public showSearchContainer = false;
+  @ViewChild('search') search!: ElementRef;
 
   constructor(public readonly characterService: CharacterService) {}
 
@@ -17,5 +19,15 @@ export class CharacterListComponent {
     this.characters = await this.characterService.loadCharacters(
       this.inputSearchValue
     );
+  }
+
+  moveToSearch(): void {
+    this.showSearchContainer = true;
+    setTimeout(() => {
+      const search = document.getElementById('search');
+      if (search) {
+        search.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 20);
   }
 }
