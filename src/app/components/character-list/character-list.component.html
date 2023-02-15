@@ -16,7 +16,7 @@
       Saiba mais sobre os <span>personagens</span> de Rick & Morty
     </h1>
     <p class="introduction-container__item__animated-text-2">
-      A API contém informações sobre todos os personagens de Rick e Morty
+      Pesquise um personagem e obtenha informações relevantes sobre ele!
     </p>
     <button
       type="button"
@@ -34,28 +34,26 @@
   </div>
 </div>
 
-<div style="background-color: #181818">
-  <div id="search" class="search-container" *ngIf="showSearchContainer">
-    <div class="search-container__items">
-      <input
-        type="text"
-        [(ngModel)]="inputSearchValue"
-        placeholder="Pesquisar..."
-      />
-      <button type="button" (click)="loadCharacters()">btn</button>
-    </div>
+<div id="search" class="search-container" *ngIf="showSearchContainer">
+  <div class="search-container__items">
+    <input
+      type="text"
+      [(ngModel)]="inputSearchValue"
+      placeholder="Pesquisar..."
+    />
+    <button type="button" (click)="loadCharacters()">btn</button>
   </div>
+</div>
 
-  <div class="characters-list-container" id="charactersList">
-    <div *ngFor="let character of characters">
-      <div class="characters-list-container__items">
-        <img src="{{ character.image }}" />
-        <h1>{{ character.name }}</h1>
-        <p>Status: {{ character.status }}</p>
-        <p>Espécie: {{ character.species }}</p>
-        <p>Gênero: {{ character.gender }}</p>
-        <p>Localização: {{ character.location.name }}</p>
-      </div>
+<div class="characters-list-container" id="charactersList">
+  <div *ngFor="let character of characters">
+    <div class="characters-list-container__items">
+      <img src="{{ character.image }}" />
+      <h1>{{ character.name }}</h1>
+      <p>Status: {{ character.status }}</p>
+      <p>Espécie: {{ character.species }}</p>
+      <p>Gênero: {{ character.gender }}</p>
+      <p>Localização: {{ character.location.name }}</p>
     </div>
   </div>
 </div>

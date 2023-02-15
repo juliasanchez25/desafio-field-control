@@ -13,6 +13,7 @@ export class CharacterService {
     if (inputSearchValue === '') {
       return 'Invalid value';
     }
+
     const request = await this.httpClient
       .get<any>(
         `https://rickandmortyapi.com/api/character/?name=${inputSearchValue}`
@@ -22,7 +23,7 @@ export class CharacterService {
     setTimeout(() => {
       const charactersList = document.getElementById('charactersList');
       if (charactersList) {
-        charactersList.scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo(0, 830);
       }
     }, 10);
 

@@ -1,5 +1,4 @@
-a {
-  text-decoration: none;
+* {
   color: #fff;
 }
 
@@ -9,14 +8,18 @@ a {
   align-items: center;
   position: fixed;
   padding: 25px 10%;
-  background-color: #04000d;
   width: 100%;
+  background-color: #04000d;
   z-index: 999;
+
+  a {
+    text-decoration: none;
+  }
 
   &__logo {
     cursor: pointer;
     margin-right: auto;
-    font-size: 1.8rem;
+    font-size: 1.9em;
   }
 
   &__navbar {
@@ -25,9 +28,8 @@ a {
       padding: 0 40px;
 
       div {
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 700;
-        color: #fff;
         border-bottom: 3px solid transparent;
         transition: all 0.3s ease 0s;
         cursor: pointer;
@@ -120,11 +122,12 @@ a {
     a,
     button {
       padding: 15px;
+      margin-left: 6vw;
     }
 
     h1 {
       margin-top: 6vh;
-      font-size: 3.5em;
+      font-size: 4em;
       max-width: 600px;
       word-wrap: break-word;
 
@@ -134,20 +137,18 @@ a {
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       margin-bottom: 2vh;
       max-width: 600px;
       word-wrap: break-word;
     }
 
     button {
-      padding: 15px;
       width: 250px;
       height: 60px;
       border-radius: 30px;
-      font-size: 20px;
+      font-size: 1.4em;
       font-weight: 700;
-      color: #fff;
       background-color: #24b139;
       opacity: 0.9;
       transition: 0.3s all ease;
@@ -165,15 +166,15 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  border-top-left-radius: 200px;
-  border-top-right-radius: 200px;
+  background-color: #1f1f1f;
 
   h1 {
     text-align: center;
   }
 
   &__items {
+    margin-top: 3vh;
+    margin-bottom: 7vh;
     display: flex;
     height: 55px;
 
@@ -188,6 +189,7 @@ a {
       border: none;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      color: #04000d;
 
       &:focus {
         border: 2px solid #24b139;
@@ -220,11 +222,11 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  background-color: #1f1f1f;
 
   &__items {
     padding: 40px;
     margin: 10px;
-    margin-top: 7vh;
 
     img {
       margin-bottom: 15px;
@@ -245,8 +247,9 @@ a {
     }
 
     p {
-      max-width: 200px;
+      max-width: 250px;
       word-wrap: break-word;
+      font-size: 1.3em;
     }
   }
 }
