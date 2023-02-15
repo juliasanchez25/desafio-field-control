@@ -10,6 +10,7 @@ export class CharacterListComponent {
   public inputSearchValue: string = '';
   public characters: any = [];
   public showSearchContainer = false;
+
   @ViewChild('search') search!: ElementRef;
 
   constructor(public readonly characterService: CharacterService) {}

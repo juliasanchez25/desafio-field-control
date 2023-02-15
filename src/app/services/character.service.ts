@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable, ViewChild } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CharacterService {
+  @ViewChild('charactersList') charactersList!: ElementRef;
+
   constructor(private httpClient: HttpClient) {}
 
   async loadCharacters(inputSearchValue: string) {
@@ -16,6 +18,14 @@ export class CharacterService {
         `https://rickandmortyapi.com/api/character/?name=${inputSearchValue}`
       )
       .toPromise();
+
+    setTimeout(() => {
+      const charactersList = document.getElementById('charactersList');
+      if (charactersList) {
+        charactersList.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 10);
+
     console.log(request);
     return request.results;
   }

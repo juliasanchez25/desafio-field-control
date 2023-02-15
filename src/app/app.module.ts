@@ -8,17 +8,9 @@ import { CharacterListComponent } from './components/character-list/character-li
 import { CharacterService } from './services/character.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CharacterListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  declarations: [AppComponent, CharacterListComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [CharacterService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

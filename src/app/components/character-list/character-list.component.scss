@@ -1,9 +1,14 @@
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  padding: 30px 10%;
+  padding: 25px 10%;
   background-color: #04000d;
   width: 100%;
   z-index: 999;
@@ -18,10 +23,6 @@
     &__nav-item {
       display: inline-block;
       padding: 0 40px;
-
-      a {
-        text-decoration: none;
-      }
 
       div {
         font-size: 1.2em;
@@ -51,7 +52,7 @@
 
     &__animated-text-1 {
       animation-name: slideInLeft;
-      animation-duration: 2s;
+      animation-duration: 1.5s;
 
       @keyframes slideInLeft {
         from {
@@ -66,7 +67,7 @@
 
     &__animated-text-2 {
       animation-name: slideInLeft;
-      animation-duration: 2.5s;
+      animation-duration: 2s;
 
       @keyframes slideInLeft {
         from {
@@ -81,7 +82,7 @@
 
     &__animated-button {
       animation-name: slideInLeft;
-      animation-duration: 3s;
+      animation-duration: 2.5s;
 
       @keyframes slideInLeft {
         from {
@@ -165,10 +166,8 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
-  margin-top: 5vh;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
-  background-color: #181818;
 
   h1 {
     text-align: center;
@@ -177,8 +176,6 @@
   &__items {
     display: flex;
     height: 55px;
-    margin-top: 15px;
-    margin-bottom: 20px;
 
     input {
       width: 70%;
@@ -223,11 +220,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  background-color: #181818;
 
   &__items {
     padding: 40px;
     margin: 10px;
+    margin-top: 7vh;
 
     img {
       margin-bottom: 15px;
