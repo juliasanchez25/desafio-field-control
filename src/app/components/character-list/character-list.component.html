@@ -41,8 +41,16 @@
       [(ngModel)]="inputSearchValue"
       placeholder="Pesquisar..."
     />
-    <button type="button" (click)="loadCharacters()">btn</button>
+    <button type="button" (click)="loadCharacters()">
+      <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
+    </button>
   </div>
+</div>
+
+<div class="buttons-container" *ngIf="showButtons">
+  <button (click)="previousPage()">Anterior</button>
+  <span> Página {{ page }} </span>
+  <button (click)="nextPage()">Próxima</button>
 </div>
 
 <div class="characters-list-container" id="charactersList">

@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-character-list',
@@ -10,16 +11,24 @@ export class CharacterListComponent {
   public inputSearchValue: string = '';
   public characters: any = [];
   public showSearchContainer = false;
+  public showButtons = false;
+  public searchIcon = faMagnifyingGlass;
+  public page: number = 1;
 
   @ViewChild('search') search!: ElementRef;
 
   constructor(public readonly characterService: CharacterService) {}
 
   async loadCharacters() {
-    console.log(this.inputSearchValue);
+    this.page = 1;
     this.characters = await this.characterService.loadCharacters(
-      this.inputSearchValue
+      this.inputSearchValue,
+      this.page
     );
+
+    if (this.characters.length > 0) {
+      this.showButtons = true;
+    }
   }
 
   moveToSearch(): void {
@@ -30,5 +39,24 @@ export class CharacterListComponent {
         search.scrollIntoView({ behavior: 'smooth' });
       }
     }, 20);
+  }
+
+  async nextPage() {
+    this.page = this.page + 1;
+    this.characters = await this.characterService.loadCharacters(
+      this.inputSearchValue,
+      this.page
+    );
+  }
+
+  async previousPage() {
+    this.page = this.page - 1;
+    if (this.page < 1) {
+      this.page++;
+    }
+    this.characters = await this.characterService.loadCharacters(
+      this.inputSearchValue,
+      this.page
+    );
   }
 }

@@ -166,11 +166,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1f1f1f;
-
-  h1 {
-    text-align: center;
-  }
 
   &__items {
     margin-top: 3vh;
@@ -212,6 +207,10 @@
       &:hover {
         opacity: 1;
       }
+
+      .icon {
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -222,7 +221,6 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  background-color: #1f1f1f;
 
   &__items {
     padding: 40px;
@@ -251,5 +249,35 @@
       word-wrap: break-word;
       font-size: 1.3em;
     }
+  }
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  button {
+    margin: 25px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #24b139;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  span {
+    font-size: 1.3rem;
+    margin: 10px;
+    text-align: center;
   }
 }

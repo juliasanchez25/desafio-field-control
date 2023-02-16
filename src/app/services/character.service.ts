@@ -9,14 +9,14 @@ export class CharacterService {
 
   constructor(private httpClient: HttpClient) {}
 
-  async loadCharacters(inputSearchValue: string) {
+  async loadCharacters(inputSearchValue: string, page: number) {
     if (inputSearchValue === '') {
       return 'Invalid value';
     }
 
     const request = await this.httpClient
       .get<any>(
-        `https://rickandmortyapi.com/api/character/?name=${inputSearchValue}`
+        `https://rickandmortyapi.com/api/character/?page=${page}&name=${inputSearchValue}`
       )
       .toPromise();
 
