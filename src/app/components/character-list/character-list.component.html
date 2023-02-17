@@ -1,11 +1,13 @@
-<div class="header-container">
-  <h1 class="header-container__logo"><a href="/">Rick & Morty</a></h1>
-  <div class="header-container__navbar">
-    <div class="header-container__navbar__nav-item">
-      <a href="/"><div>Home</div></a>
-    </div>
-    <div class="header-container__navbar__nav-item">
-      <div (click)="moveToSearch()">Pesquisar</div>
+<div class="navbar-container" [style.background-color]="navbarColor">
+  <div class="navbar-container__logo">
+    <a href="/"><h1>Rick & Morty</h1></a>
+  </div>
+  <div class="navbar-container__nav-items">
+    <a href="/" class="navbar-container__nav-items__link">Home</a>
+  </div>
+  <div class="navbar-container__nav-items">
+    <div (click)="moveToSearch()" class="navbar-container__nav-items__link">
+      Pesquisar
     </div>
   </div>
 </div>
@@ -36,7 +38,6 @@
 
 <div class="search-list-container">
   <div
-    id="search"
     class="search-list-container__search-container"
     *ngIf="showSearchContainer"
   >
@@ -44,7 +45,9 @@
       <input
         type="text"
         [(ngModel)]="inputSearchValue"
+        (keyup.enter)="loadCharacters()"
         placeholder="Pesquisar..."
+        id="search"
       />
       <button type="button" (click)="loadCharacters()">
         <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
@@ -52,16 +55,15 @@
     </div>
   </div>
 
-  <div class="search-list-container__buttons-container" *ngIf="showButtons">
-    <button (click)="previousPage()" [disabled]="page === 1">Anterior</button>
-    <span> Página {{ page }} </span>
-    <button (click)="nextPage()">Próxima</button>
-  </div>
-
   <div
     class="search-list-container__characters-list-container"
     id="charactersList"
   >
+    <div class="search-list-container__buttons-container" *ngIf="showButtons">
+      <button (click)="previousPage()" [disabled]="page === 1">Anterior</button>
+      <span> Página {{ page }} </span>
+      <button (click)="nextPage()">Próxima</button>
+    </div>
     <div *ngFor="let character of characters">
       <div class="search-list-container__characters-list-container__items">
         <img src="{{ character.image }}" />
@@ -73,4 +75,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div (click)="scrollToTop()" class="scrollTop">
+  <fa-icon class="scrollTop" [icon]="arrowIcon"></fa-icon>
 </div>

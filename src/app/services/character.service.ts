@@ -23,7 +23,7 @@ export class CharacterService {
     setTimeout(() => {
       const charactersList = document.getElementById('charactersList');
       if (charactersList) {
-        window.scrollTo(0, 830);
+        window.scrollTo(0, 870);
       }
     }, 10);
 

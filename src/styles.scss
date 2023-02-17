@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 
 html {
@@ -12,6 +13,9 @@ html {
 }
 
 body {
-  background-color: #04000d;
-  color: #fff;
+  background-color: #121212;
+}
+
+a {
+  text-decoration: none;
 }

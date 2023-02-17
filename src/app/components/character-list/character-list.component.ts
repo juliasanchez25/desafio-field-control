@@ -1,6 +1,9 @@
 import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faArrowUp,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-character-list',
@@ -13,9 +16,12 @@ export class CharacterListComponent {
   public showSearchContainer = false;
   public showButtons = false;
   public searchIcon = faMagnifyingGlass;
+  public arrowIcon = faArrowUp;
+  public navbarColor = 'transparent';
   public page: number = 1;
 
   @ViewChild('search') search!: ElementRef;
+  @ViewChild('navbar') navbarRef!: ElementRef;
 
   constructor(public readonly characterService: CharacterService) {}
 
@@ -33,6 +39,7 @@ export class CharacterListComponent {
 
   moveToSearch(): void {
     this.showSearchContainer = true;
+
     setTimeout(() => {
       const search = document.getElementById('search');
       if (search) {
@@ -55,5 +62,23 @@ export class CharacterListComponent {
       this.inputSearchValue,
       this.page
     );
+  }
+
+  @HostListener('document:keyup.enter', ['$event'])
+  onEnter(event: KeyboardEvent) {
+    this.loadCharacters();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    if (window.pageYOffset > 50) {
+      this.navbarColor = '#151515';
+    } else {
+      this.navbarColor = 'transparent';
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }
