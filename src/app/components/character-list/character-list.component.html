@@ -34,34 +34,43 @@
   </div>
 </div>
 
-<div id="search" class="search-container" *ngIf="showSearchContainer">
-  <div class="search-container__items">
-    <input
-      type="text"
-      [(ngModel)]="inputSearchValue"
-      placeholder="Pesquisar..."
-    />
-    <button type="button" (click)="loadCharacters()">
-      <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
-    </button>
+<div class="search-list-container">
+  <div
+    id="search"
+    class="search-list-container__search-container"
+    *ngIf="showSearchContainer"
+  >
+    <div class="search-list-container__search-container__items">
+      <input
+        type="text"
+        [(ngModel)]="inputSearchValue"
+        placeholder="Pesquisar..."
+      />
+      <button type="button" (click)="loadCharacters()">
+        <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
+      </button>
+    </div>
   </div>
-</div>
 
-<div class="buttons-container" *ngIf="showButtons">
-  <button (click)="previousPage()">Anterior</button>
-  <span> Página {{ page }} </span>
-  <button (click)="nextPage()">Próxima</button>
-</div>
+  <div class="search-list-container__buttons-container" *ngIf="showButtons">
+    <button (click)="previousPage()" [disabled]="page === 1">Anterior</button>
+    <span> Página {{ page }} </span>
+    <button (click)="nextPage()">Próxima</button>
+  </div>
 
-<div class="characters-list-container" id="charactersList">
-  <div *ngFor="let character of characters">
-    <div class="characters-list-container__items">
-      <img src="{{ character.image }}" />
-      <h1>{{ character.name }}</h1>
-      <p>Status: {{ character.status }}</p>
-      <p>Espécie: {{ character.species }}</p>
-      <p>Gênero: {{ character.gender }}</p>
-      <p>Localização: {{ character.location.name }}</p>
+  <div
+    class="search-list-container__characters-list-container"
+    id="charactersList"
+  >
+    <div *ngFor="let character of characters">
+      <div class="search-list-container__characters-list-container__items">
+        <img src="{{ character.image }}" />
+        <h1>{{ character.name }}</h1>
+        <p>Status: {{ character.status }}</p>
+        <p>Espécie: {{ character.species }}</p>
+        <p>Gênero: {{ character.gender }}</p>
+        <p>Localização: {{ character.location.name }}</p>
+      </div>
     </div>
   </div>
 </div>

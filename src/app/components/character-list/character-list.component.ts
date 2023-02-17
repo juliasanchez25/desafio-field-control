@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
@@ -51,9 +51,6 @@ export class CharacterListComponent {
 
   async previousPage() {
     this.page = this.page - 1;
-    if (this.page < 1) {
-      this.page++;
-    }
     this.characters = await this.characterService.loadCharacters(
       this.inputSearchValue,
       this.page
