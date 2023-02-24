@@ -3,6 +3,8 @@ import { CharacterService } from 'src/app/services/character.service';
 import {
   faMagnifyingGlass,
   faArrowUp,
+  faArrowRight,
+  faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -17,6 +19,8 @@ export class CharacterListComponent {
   public showButtons = false;
   public searchIcon = faMagnifyingGlass;
   public arrowIcon = faArrowUp;
+  public leftArrowIcon = faArrowLeft;
+  public rightArrowIcon = faArrowRight;
   public navbarColor = 'transparent';
   public page: number = 1;
 
@@ -41,9 +45,9 @@ export class CharacterListComponent {
     this.showSearchContainer = true;
 
     setTimeout(() => {
-      const search = document.getElementById('search');
-      if (search) {
-        search.scrollIntoView({ behavior: 'smooth' });
+      const inputSearch = document.getElementById('inputSearch');
+      if (inputSearch) {
+        inputSearch.scrollIntoView({ behavior: 'smooth' });
       }
     }, 20);
   }

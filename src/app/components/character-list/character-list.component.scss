@@ -40,7 +40,7 @@
   align-items: center;
   margin-top: 0;
   height: 100vh;
-  background: url(../../../assets/img/banner2.png) center no-repeat;
+  background: url(../../../assets/img/banner.png) center no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -158,134 +158,128 @@
   }
 }
 
-.search-list-container {
-  margin: -3vh auto;
-  width: 90%;
-  background-color: #151515;
-  border-radius: 20px;
-  z-index: 999;
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &__search-container {
+  &__items {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    display: flex;
+    height: 55px;
+    width: 80vw;
 
-    &__items {
-      display: flex;
-      justify-content: center;
-      margin-top: 7vh;
-      margin-bottom: 7vh;
-      display: flex;
-      height: 55px;
-      width: 80vw;
+    input {
+      width: 60%;
+      max-width: 600px;
+      padding: 25px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #04000d;
 
-      input {
-        width: 60%;
-        max-width: 600px;
-        padding: 25px;
-        font-size: 1.1em;
-        font-weight: 600;
-        border-radius: 50px;
-        outline: none;
-        border: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        color: #04000d;
-
-        &:focus {
-          border: 2px solid #24b139;
-        }
-      }
-
-      button {
-        padding: 10px 50px;
-        border: none;
-        border-top-right-radius: 50px;
-        border-bottom-right-radius: 50px;
-        background-color: #24b139;
-        color: #fff;
-        font-size: 15px;
-        font-weight: 700;
-        opacity: 0.9;
-        transition: 0.3s all ease;
-        cursor: pointer;
-
-        &:hover {
-          opacity: 1;
-        }
-
-        .icon {
-          font-size: 1.5rem;
-        }
+      &:focus {
+        border: 2px solid #24b139;
       }
     }
-  }
-
-  &__characters-list-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-
-    &__items {
-      padding: 40px;
-      margin: 10px;
-
-      img {
-        margin-bottom: 15px;
-        opacity: 0.8;
-        transition: 0.3s all ease;
-        border-radius: 15px;
-
-        &:hover {
-          transform: scale(1.1);
-          opacity: 1;
-        }
-      }
-
-      h1 {
-        max-width: 250px;
-        word-wrap: break-word;
-        font-size: 1.5em;
-      }
-
-      p {
-        max-width: 250px;
-        word-wrap: break-word;
-        font-size: 1.3em;
-      }
-    }
-  }
-
-  &__buttons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 
     button {
-      margin: 25px;
+      padding: 10px 50px;
       border: none;
-      outline: none;
-      padding: 10px;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
       background-color: #24b139;
-      font-size: 1.2rem;
-      border-radius: 20px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      opacity: 0.9;
+      transition: 0.3s all ease;
       cursor: pointer;
-      opacity: 0.8;
-      transition: all 0.3s ease 0s;
 
       &:hover {
         opacity: 1;
       }
+
+      .icon {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.characters-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+
+  &__items {
+    padding: 40px;
+    margin: 10px;
+
+    img {
+      margin-bottom: 15px;
+      opacity: 0.8;
+      transition: 0.3s all ease;
+      border-radius: 15px;
+
+      &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+      }
     }
 
-    span {
-      font-size: 1.3rem;
-      margin: 10px;
-      text-align: center;
+    h1 {
+      max-width: 250px;
+      word-wrap: break-word;
+      font-size: 1.5em;
     }
+
+    p {
+      max-width: 250px;
+      word-wrap: break-word;
+      font-size: 1.3em;
+    }
+  }
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  button {
+    margin: 25px;
+    padding: 15px;
+    width: 60px;
+    background-color: transparent;
+    border: none;
+    border: 2px solid #24b139;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      opacity: 1;
+      background-color: #24b139;
+    }
+  }
+
+  span {
+    font-size: 1.3rem;
+    margin: 10px;
+    text-align: center;
   }
 }
 
